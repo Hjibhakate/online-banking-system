@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SecureBank Dashboard</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo" aria-label="SecureBank Logo">SecureBank</div>
+      <h1>Dashboard</h1>
+      <nav aria-label="Main navigation">
+        <a href="/logout" class="logout-link" id="logoutLink">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="account-overview" aria-labelledby="welcomeHeading">
+      <h2 id="welcomeHeading">Welcome, User!</h2>
+      <p>Your current balance:</p>
+      <p class="balance" aria-live="polite" aria-atomic="true" aria-label="Current balance">$12,345.67</p>
+      <p>Account Number: <strong>1234 5678 9012 3456</strong></p>
+    </section>
+
+    <nav class="actions" aria-label="Dashboard actions">
+      <button id="transferBtn" type="button" aria-describedby="transferDesc">💸 Transfer Money</button>
+      <span id="transferDesc" class="sr-only">Start a money transfer</span>
+
+      <button id="transactionsBtn" type="button" aria-describedby="transactionsDesc">📊 View Transactions</button>
+      <span id="transactionsDesc" class="sr-only">See your transaction history</span>
+
+      <button id="settingsBtn" type="button" aria-describedby="settingsDesc">⚙️ Account Settings</button>
+      <span id="settingsDesc" class="sr-only">Manage your account settings</span>
+
+      <button id="logoutBtn" type="button" aria-describedby="logoutDesc">🚪 Logout</button>
+      <span id="logoutDesc" class="sr-only">Logout from your account</span>
+    </nav>
+  </main>
+
+  <footer>
+    &copy; 2025 SecureBank. All rights reserved.
+  </footer>
+
+ <script src="{{ url_for('static', filename='dashboard.js') }}" ></script>
+</body>
+</html>

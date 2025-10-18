@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SecureBank - Online Banking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">SecureBank</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+            <button class="nav-btn" onclick="toggleModal('loginModal')">Login</button>
+            <button class="nav-btn" onclick="toggleModal('registerModal')">Register</button>
+            
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bank Smarter, Anytime, Anywhere</h1>
+        <p>Manage your finances with our secure and user-friendly online banking system.</p>
+        <button class="cta-btn" onclick="toggleModal('registerModal')">Get Started</button>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">💸 Easy Transfers</div>
+            <div class="feature-item">📊 Real-time Insights</div>
+            <div class="feature-item">🔐 Secure Access</div>
+            <div class="feature-item">📱 Mobile Friendly</div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <p>&copy; 2025 SecureBank. All rights reserved.</p>
+    </footer>
+
+
+    <!-- Login Modal -->
+<div id="loginModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal('loginModal')">&times;</span>
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button onclick="loginUser(document.getElementById('loginEmail').value, document.getElementById('loginPassword').value)">Login</button>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div id="registerModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal('registerModal')">&times;</span>
+        <h2>Register</h2>
+        <input type="text" id="registerName" placeholder="Full Name" required>
+        <input type="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+        <input type="tel" id="registerPhone" placeholder="Phone Number" required>
+        <input type="text" id="registerAddress" placeholder="Address" required>
+        <button onclick="registerUser()">Register</button>
+    </div>
+</div>
+
+
+    
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
